@@ -15,6 +15,11 @@ fn main() {
         process::exit(1);
     }
 
+    if args[1] == "--version" || args[1] == "-V" {
+        println!("clean-runner {}", env!("CARGO_PKG_VERSION"));
+        process::exit(0);
+    }
+
     let wasm_path = &args[1];
 
     match runner::run(wasm_path) {
