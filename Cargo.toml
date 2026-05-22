@@ -1,0 +1,14 @@
+[package]
+name = "clean-runner"
+version = "0.1.0"
+edition = "2021"
+description = "Standalone WebAssembly runner for Clean Language programs"
+license = "MIT"
+
+[[bin]]
+name = "clean-runner"
+path = "src/main.rs"
+
+[dependencies]
+wasmtime = "10.0"
+anyhow = "1.0"
