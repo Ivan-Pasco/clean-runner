@@ -291,7 +291,7 @@ dependencies = [
 
 [[package]]
 name = "clean-runner"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "host-bridge",
  "tokio",
@@ -969,6 +969,7 @@ dependencies = [
 [[package]]
 name = "host-bridge"
 version = "1.0.0"
+source = "git+https://github.com/Ivan-Pasco/clean-server-old.git?rev=bfc4d34510fadd4a59f4bb69de7d6feee74d71a1#bfc4d34510fadd4a59f4bb69de7d6feee74d71a1"
 dependencies = [
  "aes-gcm",
  "anyhow",
