@@ -1,6 +1,6 @@
 [package]
 name = "clean-runner"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2021"
 description = "Standalone WebAssembly runner for Clean Language programs"
 license = "MIT"
@@ -10,5 +10,6 @@ name = "clean-runner"
 path = "src/main.rs"
 
 [dependencies]
-wasmtime = "10.0"
-anyhow = "1.0"
+wasmtime = "26.0"
+tokio = { version = "1.35", features = ["rt-multi-thread"] }
+host-bridge = { path = "../clean-server/host-bridge" }
