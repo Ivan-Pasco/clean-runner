@@ -36,7 +36,16 @@ jobs:
       with:
         targets: ${{ matrix.target }}
 
+    # host-bridge comes from clean-server-old, whose JSONTestSuite submodule
+    # has paths longer than Windows' default 260-character limit. Fetch git
+    # dependencies with the git CLI and enable long paths for it.
+    - name: Enable long git paths (Windows)
+      if: runner.os == 'Windows'
+      run: git config --global core.longpaths true
+
     - name: Build
+      env:
+        CARGO_NET_GIT_FETCH_WITH_CLI: "true"
       run: cargo build --release --target ${{ matrix.target }}
 
     - name: Package (Unix)
